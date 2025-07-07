@@ -63,3 +63,12 @@ stories:
   - slot_was_set:
       - nom: "Martin"
   - action: utter_demander_date
+
+- story: reservation avec formulaire
+  steps:
+    - intent: demander_reservation
+    - action: reservation_form
+    - active_loop: reservation_form
+    - active_loop: null
+    - action: utter_reservation_complete
+

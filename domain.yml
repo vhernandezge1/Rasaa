@@ -25,12 +25,14 @@ entities:
 slots:
   produit:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: produit
 
   nom:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: nom
@@ -41,6 +43,7 @@ slots:
 
   date:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: date
@@ -51,6 +54,7 @@ slots:
 
   heure:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: heure
@@ -61,6 +65,7 @@ slots:
 
   nombre_personnes:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: nombre_personnes
@@ -103,6 +108,18 @@ responses:
   utter_demander_nom:
     - text: "Parfait ! Pour commencer la réservation, quel est votre nom s'il vous plaît ?"
 
+  utter_ask_nom:
+    - text: "Quel est votre nom pour la réservation ?"
+
+  utter_ask_date:
+    - text: "Pour quelle date souhaitez-vous réserver ?"
+
+  utter_ask_heure:
+    - text: "À quelle heure préféreriez-vous venir ?"
+
+  utter_ask_nombre_personnes:
+    - text: "Combien de personnes serez-vous ?"
+
   utter_demander_date:
     - text: "Merci {nom} ! Pour quelle date souhaitez-vous réserver ?"
 
@@ -121,6 +138,17 @@ responses:
         👥 Nombre de personnes : {nombre_personnes}
 
         Confirmez-vous cette réservation ?
+
+  utter_reservation_complete:
+    - text: "Merci, votre réservation est bien enregistrée ! 😊"
+
+forms:
+  reservation_form:
+    required_slots:
+      - nom
+      - date
+      - heure
+      - nombre_personnes
 
 session_config:
   session_expiration_time: 60

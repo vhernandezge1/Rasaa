@@ -48,14 +48,13 @@ nlu:
 - intent: donner_nom
   examples: |
     - Dupont
-    - dupont
-    - Martin
-    - martin
-    - C’est Martin
-    - Je m'appelle Dupont
+    - C'est Jean
+    - Je m'appelle Sophie
     - Mon nom est Martin
-    - Nom : Lemoine
-    - Je suis Durand
+    - Martin
+    - C'est Paul
+    - Je suis Camille
+
 
 - intent: demander_reservation
   examples: |
@@ -67,4 +66,26 @@ nlu:
     - puis-je réserver une table ?
     - j'aimerais réserver pour samedi
 
+- intent: donner_date
+  examples: |
+    - samedi prochain
+    - le 20 juillet
+    - demain soir
+    - ce soir
+    - vendredi à 20h
+
+- intent: donner_heure
+  examples: |
+    - à 20h
+    - vers 19h30
+    - 21h
+    - 18h15
+
+- intent: donner_nombre
+  examples: |
+    - nous serons 4
+    - 2 personnes
+    - une table pour 6
+    - on est 3
+    - 5 personnes
 
