@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: répondre aux salutations
+  steps:
+  - intent: saluer
+  - action: utter_saluer
+
+- rule: répondre au menu
+  steps:
+  - intent: demander_menu
+  - action: utter_menu
+
+- rule: dire au revoir
+  steps:
+  - intent: dire_aurevoir
+  - action: utter_aurevoir

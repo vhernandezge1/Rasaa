@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-produit",
+      "2": "I-produit",
+      "3": "L-produit",
+      "4": "U-produit",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-produit": 1,
+      "I-produit": 2,
+      "L-produit": 3,
+      "U-produit": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

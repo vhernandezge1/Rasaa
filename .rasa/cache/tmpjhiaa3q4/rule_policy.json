@@ -1,0 +1,20 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saluer\"}}]": "utter_saluer",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saluer\"}}, {\"prev_action\": {\"action_name\": \"utter_saluer\"}, \"user\": {\"intent\": \"saluer\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_menu\"}}]": "utter_menu",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_menu\"}}, {\"prev_action\": {\"action_name\": \"utter_menu\"}, \"user\": {\"intent\": \"demander_menu\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"dire_aurevoir\"}}]": "utter_aurevoir",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"dire_aurevoir\"}}, {\"prev_action\": {\"action_name\": \"utter_aurevoir\"}, \"user\": {\"intent\": \"dire_aurevoir\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent back",
+      "predicting default action with intent session_start"
+    ]
+  }
+}

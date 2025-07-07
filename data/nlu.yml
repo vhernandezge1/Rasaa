@@ -1,0 +1,46 @@
+version: "3.1"
+
+nlu:
+- intent: saluer
+  examples: |
+    - bonjour
+    - salut
+    - hello
+    - bonsoir
+    - hey
+    - coucou
+
+- intent: demander_menu
+  examples: |
+    - je veux voir le menu
+    - montrez-moi la carte
+    - qu'est-ce que vous avez comme pizzas
+    - vos spécialités
+    - que proposez-vous
+
+- intent: commander
+  examples: |
+    - je veux commander une [pizza margherita](produit)
+    - j'aimerais une [regina](produit) s'il vous plaît
+    - commande [calzone](produit)
+    - prenez ma commande
+
+- intent: demander_prix
+  examples: |
+    - combien coûte la [margherita](produit)
+    - prix de la [regina](produit)
+    - tarif [calzone](produit)
+
+- intent: demander_horaires
+  examples: |
+    - à quelle heure ouvrez-vous
+    - horaires d'ouverture
+    - vous fermez quand
+    - ouvert le dimanche
+
+- intent: dire_aurevoir
+  examples: |
+    - au revoir
+    - bye
+    - à bientôt
+    - merci au revoir

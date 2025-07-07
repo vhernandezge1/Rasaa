@@ -1,0 +1,56 @@
+version: '3.1'
+
+intents:
+  - saluer
+  - demander_menu
+  - commander
+  - demander_prix
+  - demander_horaires
+  - dire_aurevoir
+
+entities:
+  - produit
+
+slots:
+  produit:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: produit
+
+
+responses:
+  utter_saluer:
+    - text: "Bonjour ! Bienvenue chez Pizza Rasa. Comment puis-je vous aider ?"
+    - text: "Salut ! Que puis-je faire pour vous aujourd'hui ?"
+    - text: "Très bien, votre commande pour une {produit} est enregistrée !"
+  utter_commande_confirmee:
+    - text: "Très bien, votre commande pour une {produit} est enregistrée !"
+
+  utter_menu:
+    - text: |
+        Voici notre menu :
+        🍕 Margherita - 12€
+        🍕 Regina - 14€  
+        🍕 Calzone - 16€  
+        🍕 Quatre Saisons - 15€
+
+        Que souhaitez-vous commander ?
+
+  utter_prix_margherita:
+    - text: "La pizza Margherita coûte 12€."
+
+  utter_prix_regina:
+    - text: "La pizza Regina coûte 14€."
+
+  utter_horaires:
+    - text: "Nous sommes ouverts du mardi au dimanche de 18h à 23h. Fermé le lundi."
+
+  utter_aurevoir:
+    - text: "Au revoir ! Merci de votre visite chez Pizza Rasa !"
+    - text: "À bientôt ! Bonne soirée !"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
