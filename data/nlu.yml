@@ -48,7 +48,23 @@ nlu:
 - intent: donner_nom
   examples: |
     - Dupont
-    - Je m'appelle Martin
+    - dupont
+    - Martin
+    - martin
+    - C’est Martin
+    - Je m'appelle Dupont
+    - Mon nom est Martin
     - Nom : Lemoine
-    - C'est Dupuis
+    - Je suis Durand
+
+- intent: demander_reservation
+  examples: |
+    - je veux réserver une table
+    - je souhaite réserver une table
+    - réserver une table
+    - je voudrais réserver pour ce soir
+    - je veux faire une réservation
+    - puis-je réserver une table ?
+    - j'aimerais réserver pour samedi
+
 
