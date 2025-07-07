@@ -7,24 +7,73 @@ intents:
   - demander_prix
   - demander_horaires
   - dire_aurevoir
+  - demander_reservation
+  - donner_nom
+  - donner_date
+  - donner_heure
+  - donner_nombre
+  - confirmer_reservation
+  - annuler_reservation
 
 entities:
   - produit
+  - nom
+  - date
+  - heure
+  - nombre_personnes
 
 slots:
   produit:
     type: text
-    influence_conversation: true
     mappings:
       - type: from_entity
         entity: produit
 
+  nom:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nom
+      - type: from_text
+        conditions:
+          - active_loop: reservation_form
+            requested_slot: nom
+
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+      - type: from_text
+        conditions:
+          - active_loop: reservation_form
+            requested_slot: date
+
+  heure:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: heure
+      - type: from_text
+        conditions:
+          - active_loop: reservation_form
+            requested_slot: heure
+
+  nombre_personnes:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nombre_personnes
+      - type: from_text
+        conditions:
+          - active_loop: reservation_form
+            requested_slot: nombre_personnes
 
 responses:
   utter_saluer:
     - text: "Bonjour ! Bienvenue chez Pizza Rasa. Comment puis-je vous aider ?"
     - text: "Salut ! Que puis-je faire pour vous aujourd'hui ?"
-    - text: "Très bien, votre commande pour une {produit} est enregistrée !"
+
   utter_commande_confirmee:
     - text: "Très bien, votre commande pour une {produit} est enregistrée !"
 
@@ -50,6 +99,28 @@ responses:
   utter_aurevoir:
     - text: "Au revoir ! Merci de votre visite chez Pizza Rasa !"
     - text: "À bientôt ! Bonne soirée !"
+
+  utter_demander_nom:
+    - text: "Parfait ! Pour commencer la réservation, quel est votre nom s'il vous plaît ?"
+
+  utter_demander_date:
+    - text: "Merci {nom} ! Pour quelle date souhaitez-vous réserver ?"
+
+  utter_demander_heure:
+    - text: "Et à quelle heure préféreriez-vous venir le {date} ?"
+
+  utter_demander_nombre_personnes:
+    - text: "Combien de personnes serez-vous le {date} à {heure} ?"
+
+  utter_confirmer_reservation:
+    - text: |
+        Parfait ! Récapitulatif de votre réservation :
+        📋 Nom : {nom}
+        📅 Date : {date}
+        🕐 Heure : {heure}
+        👥 Nombre de personnes : {nombre_personnes}
+
+        Confirmez-vous cette réservation ?
 
 session_config:
   session_expiration_time: 60

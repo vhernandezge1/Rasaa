@@ -21,3 +21,45 @@ stories:
   - intent: dire_aurevoir
   - action: utter_aurevoir
 
+- story: reservation complete
+  steps:
+  - intent: demander_reservation
+  - action: utter_demander_nom
+  - intent: donner_nom
+    entities:
+      - nom: "Dupont"
+  - slot_was_set:
+      - nom: "Dupont"
+  - action: utter_demander_date
+  - intent: donner_date
+    entities:
+      - date: "samedi prochain"
+  - slot_was_set:
+      - date: "samedi prochain"
+  - action: utter_demander_heure
+  - intent: donner_heure
+    entities:
+      - heure: "20h"
+  - slot_was_set:
+      - heure: "20h"
+  - action: utter_demander_nombre_personnes
+  - intent: donner_nombre
+    entities:
+      - nombre_personnes: "4"
+  - slot_was_set:
+      - nombre_personnes: "4"
+  - action: utter_confirmer_reservation
+
+- story: interruption menu pendant reservation
+  steps:
+  - intent: demander_reservation
+  - action: utter_demander_nom
+  - intent: demander_menu
+  - action: utter_menu
+  - action: utter_demander_nom
+  - intent: donner_nom
+    entities:
+      - nom: "Martin"
+  - slot_was_set:
+      - nom: "Martin"
+  - action: utter_demander_date

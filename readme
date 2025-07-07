@@ -1,4 +1,4 @@
-## 🛠️ Installation
+ Installation
 
 1. Créer un environnement virtuel (Python 3.9 requis) :
    python -m venv venv

@@ -44,3 +44,11 @@ nlu:
     - bye
     - à bientôt
     - merci au revoir
+
+- intent: donner_nom
+  examples: |
+    - Dupont
+    - Je m'appelle Martin
+    - Nom : Lemoine
+    - C'est Dupuis
+

@@ -6,11 +6,6 @@ rules:
   - intent: saluer
   - action: utter_saluer
 
-- rule: répondre au menu
-  steps:
-  - intent: demander_menu
-  - action: utter_menu
-
 - rule: dire au revoir
   steps:
   - intent: dire_aurevoir
